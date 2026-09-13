@@ -1,0 +1,1252 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shrija Sinha | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff9fd;
+            color: #202b65;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            height: 90px;
+            background: rgba(255, 255, 255, 0.96);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 20px rgba(53, 53, 130, 0.12);
+        }
+
+        .logo {
+            font-family: 'Kalam', cursive;
+            font-size: 34px;
+            color: #5364d8;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-size: 25px;
+            color: #ff6090;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #17234f;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff4f87;
+        }
+
+        .connect-btn {
+            background: linear-gradient(135deg, #dcd9ff, #c9f4ff);
+            color: #3444c4;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .connect-btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #bdb7ff, #a9ecff);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: calc(100vh - 90px);
+            padding: 70px 7%;
+            display: grid;
+            grid-template-columns: 0.9fr 1.3fr 0.9fr;
+            gap: 55px;
+            align-items: center;
+            background:
+                radial-gradient(circle at 0% 0%, #dcd8ff 0, #dcd8ff 8%, transparent 8.2%),
+                radial-gradient(circle at 100% 100%, #bff6ef 0, #bff6ef 8%, transparent 8.2%),
+                linear-gradient(135deg, #fff9fd, #f7f5ff);
+        }
+
+        /* ================= PROFILE PHOTO ================= */
+
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-bg {
+            width: 390px;
+            height: 500px;
+            border-radius: 50% 50% 45% 45%;
+            background: linear-gradient(145deg, #796cff, #ff72a5, #ffce70);
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 15px 45px rgba(93, 78, 214, 0.30);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50% 50% 45% 45%;
+            border: 8px solid white;
+        }
+
+        /* ================= INTRO ================= */
+
+        .intro {
+            padding: 10px;
+        }
+
+        .hello {
+            letter-spacing: 7px;
+            color: #5262d4;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .intro h1 {
+            font-size: 62px;
+            line-height: 1.1;
+            color: #1e326f;
+            margin-bottom: 15px;
+        }
+
+        .heart {
+            color: #ff6090;
+            font-size: 45px;
+        }
+
+        .subtitle {
+            color: #485cc8;
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .college {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .icon {
+            font-size: 25px;
+            color: #ffba36;
+        }
+
+        /* ================= CGPA ================= */
+
+        .cgpa-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 25px;
+            background: linear-gradient(135deg, #e5e1ff, #d4f9ff);
+            border-radius: 35px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(87, 80, 200, 0.12);
+        }
+
+        .cgpa-star {
+            font-size: 28px;
+            color: #ffb52e;
+        }
+
+        .cgpa-label {
+            font-size: 14px;
+            color: #6974d5;
+        }
+
+        .cgpa-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #283b9e;
+        }
+
+        /* ================= DESCRIPTION ================= */
+
+        .description {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #344578;
+            max-width: 620px;
+            margin-bottom: 25px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            color: white;
+            padding: 8px 17px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 5px 12px rgba(80, 70, 160, 0.15);
+        }
+
+        .skill:nth-child(1) {
+            background: #3776ab;
+        }
+
+        .skill:nth-child(2) {
+            background: #e87525;
+        }
+
+        .skill:nth-child(3) {
+            background: #22a699;
+        }
+
+        .skill:nth-child(4) {
+            background: #e84a87;
+        }
+
+        .skill:nth-child(5) {
+            background: #7048a8;
+        }
+
+        .skill:nth-child(6) {
+            background: #1976a8;
+        }
+
+        .skill:nth-child(7) {
+            background: #ef9b27;
+        }
+
+        /* ================= SOCIAL ================= */
+
+        .socials {
+            display: flex;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .socials a {
+            color: #263c83;
+            text-decoration: none;
+            font-size: 25px;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: #ff4f87;
+            transform: translateY(-4px);
+        }
+
+        /* ================= JOURNEY ================= */
+
+        .journey {
+            border-left: 2px solid #d9d4ff;
+            padding-left: 40px;
+            min-height: 600px;
+        }
+
+        .journey-title {
+            font-family: 'Kalam', cursive;
+            font-size: 35px;
+            color: #3445bd;
+            margin-bottom: 35px;
+        }
+
+        .journey-item {
+            margin-bottom: 35px;
+        }
+
+        .journey-heading {
+            font-weight: 700;
+            color: #203474;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .journey-text {
+            color: #44527d;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .journey-icon {
+            font-size: 25px;
+            color: #ff5790;
+            margin-bottom: 7px;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 40px;
+            color: #223775;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #66739b;
+            margin-bottom: 50px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: linear-gradient(135deg, #f1efff, #e9fbff);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            line-height: 2;
+            color: #43517d;
+            font-size: 17px;
+        }
+
+        /* ================= SKILLS SECTION ================= */
+
+        .skills-section {
+            background: #fff9fd;
+        }
+
+        .skill-cards {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(60, 70, 130, 0.12);
+            border-top: 5px solid #8b7cff;
+            transition: 0.3s;
+        }
+
+        .skill-card:nth-child(even) {
+            border-top-color: #ff6d9a;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 28px rgba(79, 70, 170, 0.20);
+        }
+
+        .skill-card i {
+            font-size: 34px;
+            color: #ffae2f;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: #3348ba;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #687397;
+            font-size: 14px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            background: linear-gradient(135deg, #f7f6ff, #fff1f7);
+        }
+
+        .project-container {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 7px 25px rgba(50, 60, 120, 0.12);
+            border-left: 6px solid #786cff;
+            transition: 0.3s;
+        }
+
+        .project-card:nth-child(2) {
+            border-left-color: #ff6397;
+        }
+
+        .project-card:nth-child(3) {
+            border-left-color: #23b6a4;
+        }
+
+        .project-card:nth-child(4) {
+            border-left-color: #f5ae32;
+        }
+
+        .project-card:nth-child(5) {
+            border-left-color: #4b9bea;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-icon {
+            font-size: 35px;
+            color: #ff6495;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            color: #293e9b;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #66708d;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 15px;
+            background: #e9e8ff;
+            color: #4655c6;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #fff9fd, #e9faff);
+        }
+
+        .contact-text {
+            max-width: 650px;
+            margin: auto;
+            color: #65708f;
+            line-height: 1.8;
+        }
+
+        .email-list {
+            margin: 25px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .email-list a {
+            color: #4054c5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .email-list a:hover {
+            color: #ff4f87;
+        }
+
+        .email-list i {
+            color: #ff638f;
+            margin-right: 8px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #5261d4, #e5569a);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(80, 70, 180, 0.25);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: linear-gradient(135deg, #202f68, #5237a4);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1100px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .photo-container {
+                order: 1;
+            }
+
+            .intro {
+                order: 2;
+            }
+
+            .journey {
+                order: 3;
+                border-left: none;
+                border-top: 2px solid #e1dfff;
+                padding: 40px 0 0;
+                min-height: auto;
+                text-align: left;
+            }
+
+            .description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .skills {
+                justify-content: center;
+            }
+
+            .socials {
+                justify-content: center;
+            }
+
+            .skill-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .connect-btn {
+                display: none;
+            }
+
+            .photo-bg {
+                width: 300px;
+                height: 390px;
+            }
+
+            .intro h1 {
+                font-size: 42px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .skill-cards,
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            SS <span>♡</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+        <a href="#contact" class="connect-btn">
+            Let's Connect <i class="fa-solid fa-paper-plane"></i>
+        </a>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <!-- PROFILE PHOTO -->
+
+        <div class="photo-container">
+
+            <div class="photo-bg">
+
+                <img
+                    src="{% static 'images/profile.jpg' %}"
+                    alt="Shrija Sinha"
+                    class="profile-photo"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- INTRODUCTION -->
+
+        <div class="intro">
+
+            <div class="hello">
+                HELLO, I'M
+            </div>
+
+            <h1>
+                Shrija Sinha
+                <span class="heart">♡</span>
+            </h1>
+
+            <div class="subtitle">
+                CSE (Data Science) Student
+            </div>
+
+            <div class="college">
+
+                <div class="icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    SRM Institute of Science and Technology
+                    <br>
+                    Kattankulathur (KTR), Chennai
+                </div>
+
+            </div>
+
+
+            <!-- CGPA -->
+
+            <div class="cgpa-box">
+
+                <div class="cgpa-star">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+
+                    <div class="cgpa-label">
+                        Current CGPA
+                    </div>
+
+                    <div class="cgpa-value">
+                        9.84 / 10
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="description">
+
+                I'm a passionate Computer Science and Engineering
+                (Data Science) student at SRM KTR, Chennai. I enjoy
+                programming, web designing and creating innovative
+                digital solutions that are creative, user-friendly
+                and practical.
+
+            </p>
+
+
+            <!-- SKILLS -->
+
+            <div class="skills">
+
+                <span class="skill">Python</span>
+                <span class="skill">Data Science</span>
+                <span class="skill">Web Development</span>
+                <span class="skill">Django</span>
+                <span class="skill">MySQL</span>
+                <span class="skill">Java</span>
+                <span class="skill">Problem Solving</span>
+
+            </div>
+
+
+            <!-- SOCIAL LINKS -->
+
+            <div class="socials">
+
+                <!-- GitHub -->
+                <a href="https://github.com/ShrijaSinha"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub Profile"
+                aria-label="Visit Shrija Sinha's GitHub profile">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/shrija-sinha-4b2765436/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn Profile"
+                aria-label="Visit Shrija Sinha's LinkedIn profile">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:shrijasinha24@gmail.com"
+                title="Send Email"
+                aria-label="Send an email to Shrija Sinha">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- JOURNEY -->
+
+        <div class="journey">
+
+            <div class="journey-title">
+                My Journey
+            </div>
+
+
+            <div class="journey-item">
+
+                <div class="journey-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="journey-heading">
+                    B.Tech CSE (Data Science)
+                </div>
+
+                <div class="journey-text">
+
+                    SRM Institute of Science and Technology
+                    <br>
+                    Kattankulathur (KTR), Chennai
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-item">
+
+                <div class="journey-icon">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </div>
+
+                <div class="journey-heading">
+                    Current CGPA
+                </div>
+
+                <div class="journey-text">
+                    9.84 / 10
+                </div>
+
+            </div>
+
+
+            <div class="journey-item">
+
+                <div class="journey-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <div class="journey-heading">
+                    My Interests
+                </div>
+
+                <div class="journey-text">
+
+                    Making creative and practical projects,
+                    participating in hackathons, learning new
+                    technologies and solving real-world problems.
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-item">
+
+                <div class="journey-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <div class="journey-heading">
+                    Goal
+                </div>
+
+                <div class="journey-text">
+
+                    To continuously grow as a developer and
+                    data science professional while creating
+                    impactful real-world applications.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <h2>About Me</h2>
+
+        <p class="section-subtitle">
+            A little more about who I am
+        </p>
+
+        <div class="about-content">
+
+            <p>
+                Hi, I'm Shrija Sinha, a Data Science student at
+                SRM Institute of Science and Technology with a
+                current CGPA of <strong>9.84 / 10</strong>.
+            </p>
+
+            <br>
+
+            <p>
+                I am passionate about programming, web designing
+                and creating innovative digital solutions. I have
+                knowledge of C, C++, Java, Python, Django and MySQL.
+            </p>
+
+            <br>
+
+            <p>
+                I enjoy building creative, user-friendly and
+                practical applications. I have a strong interest
+                in designing modern, responsive websites that
+                combine attractive interfaces with functionality.
+            </p>
+
+            <br>
+
+            <p>
+                I enjoy learning new technologies, solving
+                programming problems, making projects and
+                participating in hackathons. My goal is to
+                continuously grow as a developer and data science
+                professional while building impactful real-world
+                applications.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section class="skills-section" id="skills">
+
+        <h2>My Skills</h2>
+
+        <p class="section-subtitle">
+            Technologies and areas I'm learning
+        </p>
+
+        <div class="skill-cards">
+
+            <div class="skill-card">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python</h3>
+                <p>Programming, automation and problem solving</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Data Science</h3>
+                <p>Data analysis, visualization and insights</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Modern, responsive and user-friendly websites</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-server"></i>
+                <h3>Django</h3>
+                <p>Backend development and web applications</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-database"></i>
+                <h3>MySQL</h3>
+                <p>Database design and management</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-java"></i>
+                <h3>Java</h3>
+                <p>Object-oriented programming</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>C and C++</h3>
+                <p>Programming, data structures and algorithms</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                <h3>Problem Solving</h3>
+                <p>Logical, analytical and creative thinking</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-people-group"></i>
+                <h3>Hackathons</h3>
+                <p>Teamwork, innovation and rapid prototyping</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-palette"></i>
+                <h3>UI Designing</h3>
+                <p>Creative interfaces and attractive layouts</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section class="projects" id="projects">
+
+        <h2>My Projects</h2>
+
+        <p class="section-subtitle">
+            Things I've built and continue to build
+        </p>
+
+        <div class="project-container">
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+
+                <h3>SRM Carpool</h3>
+
+                <p>
+                    A Django-based carpooling platform designed
+                    for SRM students to find people travelling
+                    to the same destination.
+                </p>
+
+                <span class="project-tag">
+                    Django
+                </span>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <h3>BloodLink – Blood Bank Manager</h3>
+
+                <p>
+                    A blood bank management application designed
+                    to organize donor details, blood groups,
+                    availability and blood request information.
+                </p>
+
+                <span class="project-tag">
+                    Django + MySQL
+                </span>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+
+                <h3>AgriLink</h3>
+
+                <p>
+                    A Web GIS and AI-based software for farmers
+                    that supports agricultural information,
+                    location-based services and data-driven
+                    farming solutions.
+                </p>
+
+                <span class="project-tag">
+                    Web GIS + AI
+                </span>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <h3>Personal AI Assistant</h3>
+
+                <p>
+                    An AI assistant project currently under
+                    development to help users interact with
+                    useful digital tools and perform everyday
+                    tasks more efficiently.
+                </p>
+
+                <span class="project-tag">
+                    Currently Working
+                </span>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <h3>TaskFlow</h3>
+
+                <p>
+                    A productivity and task management application
+                    currently being developed to help users organize
+                    tasks, track progress and manage daily activities.
+                </p>
+
+                <span class="project-tag">
+                    Currently Working
+                </span>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    A personal portfolio created using Django
+                    to showcase my skills, projects, education
+                    and journey as a Data Science student.
+                </p>
+
+                <span class="project-tag">
+                    Django + HTML + CSS
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <h2>Let's Connect</h2>
+
+        <p class="section-subtitle">
+            Have an idea, opportunity or just want to say hello?
+        </p>
+
+        <p class="contact-text">
+
+            I'm always interested in learning, collaborating,
+            participating in hackathons and working on meaningful
+            projects.
+
+        </p>
+
+        <div class="email-list">
+
+            <a href="mailto:shrijasinha24@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                shrijasinha24@gmail.com
+            </a>
+
+            <a href="mailto:ss4338@srmist.edu.in">
+                <i class="fa-solid fa-graduation-cap"></i>
+                ss4338@srmist.edu.in
+            </a>
+
+        </div>
+
+        <a href="mailto:shrijasinha24@gmail.com?cc=ss4338@srmist.edu.in"
+           class="contact-btn">
+
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Me an Email
+
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Shrija Sinha | CSE (Data Science) Student
+        </p>
+
+    </footer>
+
+</body>
+</html>
